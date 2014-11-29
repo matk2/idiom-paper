@@ -8,6 +8,8 @@
 
   - @idioms.each do |idiom|
     %tr
+      %td= idiom.title
+      %td= idiom.description
       %td= link_to 'Show', idiom
       %td= link_to 'Edit', edit_idiom_path(idiom)
       %td= link_to 'Destroy', idiom, :method => :delete, :data => { :confirm => 'Are you sure?' }

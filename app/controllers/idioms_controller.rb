@@ -10,6 +10,7 @@ class IdiomsController < ApplicationController
   # GET /idioms/1
   # GET /idioms/1.json
   def show
+    @idiom = Idiom.find(params[:id])
   end
 
   # GET /idioms/new
@@ -69,6 +70,6 @@ class IdiomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def idiom_params
-      params[:idiom]
+      params.require(:idiom).permit(:title, :description)
     end
 end
