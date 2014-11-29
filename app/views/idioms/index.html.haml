@@ -1,0 +1,17 @@
+%h1 Listing idioms
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @idioms.each do |idiom|
+    %tr
+      %td= link_to 'Show', idiom
+      %td= link_to 'Edit', edit_idiom_path(idiom)
+      %td= link_to 'Destroy', idiom, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Idiom', new_idiom_path
